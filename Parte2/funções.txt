@@ -1,0 +1,6 @@
+var cursor = db.SalesDetails.find( { OrderDate: { $exists: true}});
+while (cursor.hasNext()) { 
+   var doc = cursor.next(); 
+   doc.OrderDate= new ISODate(doc.OrderDate);
+db.SalesDetails.save(doc) ;
+}
