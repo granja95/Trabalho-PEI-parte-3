@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://www.BikeOnTrack.com/Stock" 
+            targetNamespace="http://www.BikeOnTrack.com/Stock"
+            xmlns:p="http://www.BikeOnTrack.com/Produtos"
+            elementFormDefault="qualified">
+        <xs:import schemaLocation="produtos.xsd" namespace="http://www.BikeOnTrack.com/Produtos" />        
+
+
+	<xs:complexType name="stock">
+        <xs:sequence>
+            <xs:element name="ReceiptLineID" type="TypeReceiptLineID" />
+            <xs:element name="Order" type="TypeOrder" />
+            <xs:element name="produto" type="p:produtos"/>
+            <xs:element name="UnitPrice" type="TypeUnitPrice" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="TypeReceiptLineID">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>    
+
+    <xs:simpleType name="TypeOrder">
+        <xs:restriction base = "xs:integer">
+            <xs:minInclusive value = "1" />
+            <xs:maxInclusive value = "100" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="TypeUnitPrice">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="10"/>
+            <xs:fractionDigits value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
