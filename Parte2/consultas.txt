@@ -24,3 +24,15 @@ Valor total da venda por cada moeda utilizada (considere a moeda: USD para os va
 Total de produtos vendidos por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,Quantity:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$StoreName\",total:{$sum:\"$Quantity\"}}}])
 Valor total das vendas por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,LineTotal:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{ $group : { _id : \"$StoreName\", total: { $sum: \"$LineTotal\"}}}])
 Valor médio do preço de venda dos produtos por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,UnitPrice:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$StoreName\",avgPrice:{$avg:\"$UnitPrice\"}}},{$sort : {_id:1}} ])
+
+
+
+
+
+
+
+
+
+
+
+
