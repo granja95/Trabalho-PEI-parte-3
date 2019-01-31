@@ -1,1 +1,0 @@
-# Run the example using: gradle run
