@@ -1,0 +1,21 @@
+var cursor = db.SalesDetails.find( { OrderDate: { $exists: true}});
+while (cursor.hasNext()) { 
+   var doc = cursor.next(); 
+   doc.OrderDate= new ISODate(doc.OrderDate);
+db.SalesDetails.save(doc) ;
+}
+
+
+db.SalesDetails.find(
+{"CurrencyRateID":"NULL"}).forEach(function(doc)
+{doc.CurrencyRateID = 50; 
+
+db.SalesDetails.save(doc)})
+
+
+db.ProductDetailsv2.aggregate(
+{ $lookup: { 
+from:"ProductListPriceHistoryV2",
+localField:"ProductID",
+foreignField:"ProductID",
+as:"Inventory"}})

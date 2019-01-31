@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://www.BikeOnTrack.com/ProductAllSales" 
+            targetNamespace="http://www.BikeOnTrack.com/ProductAllSales" 
+            elementFormDefault="qualified">
+
+    <xs:complexType name = "ProductAllSales">
+    	<xs:sequence>
+    		<xs:element name = "AllProducts" type = "TypeAllProducts" />
+    		<xs:element name = "AllDifProducts" type = "TypeAllDifProducts"/>
+    		<xs:element name = "AllDifClients" type = "TypeAllDifClients"/>
+            <xs:element name = "SalesPerClient" type = "TypeSalesPerClient" />
+            <xs:element name = "TotalProductSales" type = "TypeTotalProductSales"/>
+            <xs:element name = "TotalSalesCurrency" type = "TypeTotalSalesCurrency"/>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeAllProducts">
+	<xs:sequence>	
+		<xs:element name = "AllProducts" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeAllDifProducts">
+	<xs:sequence>	
+		<xs:element name = "Products" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="TypeAllDifClients">
+	<xs:sequence>	
+		<xs:element name = "Customer" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeSalesPerClient">
+	<xs:sequence>	
+		<xs:element name = "SalesPerClient" type="xs:decimal" />
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeTotalProductSales">
+	<xs:sequence>	
+		<xs:element name = "id" type="xs:integer" />
+		<xs:element name = "TotalProductSales" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="TypeTotalSalesCurrency">
+	<xs:sequence>	
+		<xs:element name = "TotalSalesCurrency" type="xs:decimal" />
+	</xs:sequence>
+    </xs:complexType>

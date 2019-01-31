@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://www.BikeOnTrack.com/ProductSale" 
+            targetNamespace="http://www.BikeOnTrack.com/ProductSale" 
+            elementFormDefault="qualified">
+
+    <xs:complexType name = "ProductSale">
+    	<xs:sequence>
+    		<xs:element name = "ProductTotal" type = "TypeProductTotal" />
+    		<xs:element name = "DifProductTotal" type = "TypeDifProductTotal"/>
+    		<xs:element name = "AvgProductPrice" type = "TypeAvgProductPrice"/>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeProductTotal">
+	<xs:sequence>	
+		<xs:element name = "id" type="xs:integer" />
+		<xs:element name = "total" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeDifProductTotal">
+	<xs:sequence>	
+		<xs:element name = "ReceiptID" type="xs:integer" />
+		<xs:element name = "total" type="xs:integer" />
+	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TypeDifProductTotal">
+    	<xs:sequence>	
+		<xs:element name = "ReceiptID" type="xs:integer" />
+		<xs:element name = "total" type="xs:decimal" />
+	</xs:sequence>
+    </xs:complexType>

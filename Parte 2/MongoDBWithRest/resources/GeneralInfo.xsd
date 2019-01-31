@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://www.BikeOnTrack.com/GeneralInfo" 
+            targetNamespace="http://www.BikeOnTrack.com/GeneralInfo" 
+            elementFormDefault="qualified">
+
+    <xs:complexType name = "GeneralInfo">
+    	<xs:sequence>
+    		<xs:element name = "AllProductsSoldPerStore" type = "TypeAllProductsSoldPerStore" />
+    		<xs:element name = "TotalSalesPerStore" type = "TypeTotalSalesPerStore"/>
+    		<xs:element name = "AvgProductSalesPerStore" type = "TypeAvgProductSalesPerStore"/>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="TypeAllProductsSoldPerStore">
+		<xs:restriction base="xs:integer">
+    		<xs:minInclusive value="0" />
+    		<xs:maxInclusive value="99999"/>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeTotalSalesPerStore">
+		<xs:restriction base="xs:integer">
+    		<xs:minInclusive value="0" />
+    		<xs:maxInclusive value="99999"/>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeAvgProductSalesPerStore">
+    	<xs:restriction base="xs:decimal">
+            <xs:totalDigits value="6"/>
+            <xs:fractionDigits value="3"/>
+    	</xs:restriction>
+    </xs:simpleType>

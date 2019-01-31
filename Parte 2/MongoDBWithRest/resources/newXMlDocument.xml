@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><g:gestao empresa="BikeOnTrack" xsi:schemaLocation="http://www.BikeOnTrack.com/Gestao gestao.xsd" xmlns:g="http://www.BikeOnTrack.com/Gestao" xmlns:p="http://www.BikeOnTrack.com/Produtos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:d="http://www.BikeOnTrack.com/Datas" xmlns:c="http://www.BikeOnTrack.com/Cliente" xmlns:v="http://www.BikeOnTrack.com/Vendas" xmlns:t="http://www.BikeOnTrack.com/Taxas" xmlns:s="http://www.BikeOnTrack.com/Stock" xmlns:q="http://www.BikeOnTrack.com/Queries"  xmlns:ps="http://www.BikeOnTrack.com/ProductSale" xmlns:pas="http://www.BikeOnTrack.com/ProductAllSales"
+xmlns:gi="http://www.BikeOnTrack.com/GeneralInfo">
+    <g:Nome>Pedals Warehouse</g:Nome>
+    <q:Queries>
+        <q:ProductSale>
+            <ps:ProductTotal>
+                <ps:id>43660</ps:id>
+                <ps:total>2</ps:total>
+            </ps:ProductTotal>
+            <ps:DifProductTotal>
+                <ps:ReceiptID>43660</ps:ReceiptID>
+                <ps:total>2</ps:total>
+            </ps:DifProductTotal>
+            <ps:AvgProductPrice>
+                <ps:id>43660</ps:id>
+                <ps:total>647.12645</ps:total>
+            </ps:AvgProductPrice>
+        </q:ProductSale>
+        <q:ProductAllSales>
+            <pas:AllProducts>
+                <pas:AllProducts>2</pas:AllProducts>
+            </pas:AllProducts>
+            <pas:AllDifProducts>
+                <pas:Products>2</pas:Products>
+            </pas:AllDifProducts>
+            <pas:AllDifClients>
+                <pas:Customer>1</pas:Customer>
+            </pas:AllDifClients>
+            <pas:SalesPerClient>
+                <pas:SalesPerClient>1294.2529</pas:SalesPerClient>
+            </pas:SalesPerClient>
+            <pas:TotalProductSales>
+                <pas:id>762</pas:id>
+                <pas:TotalProductSales>1</pas:TotalProductSales>
+                <pas:id>758</pas:id>
+                <pas:TotalProductSales>1</pas:TotalProductSales>
+            </pas:TotalProductSales>
+            <pas:TotalSalesCurrency>
+                <pas:TotalSalesCurrency>1294.2529</pas:TotalSalesCurrency>
+            </pas:TotalSalesCurrency>
+        </q:ProductAllSales>
+        <q:GeneralInfo>
+            <gi:AllProductsSoldPerStore>
+                <gi:id>Pedals Warehouse</gi:id>
+                <gi:AllProductsSoldPerStore>2</gi:AllProductsSoldPerStore>
+            </gi:AllProductsSoldPerStore>
+            <gi:TotalSalesPerStore>
+                <gi:id>Pedals Warehouse</gi:id>
+                <gi:TotalSalesPerStore>1294.2529</gi:TotalSalesPerStore>
+            </gi:TotalSalesPerStore>
+            <gi:AvgProductSalesPerStore>
+                <gi:id>Pedals Warehouse</gi:id>
+                <gi:AvgProductSalesPerStore>647.12645</gi:AvgProductSalesPerStore>
+            </gi:AvgProductSalesPerStore>
+        </q:GeneralInfo>
+    </q:Queries>
+    <g:datas>
+        <d:dataInicio>2011-05-31 00:00:00.000</d:dataInicio>
+        <d:dataFim>2012-05-29 00:00:00.000</d:dataFim>
+        <d:venda>
+            <v:ReceiptID>43660</v:ReceiptID>
+            <v:OrderDate>1306800000000</v:OrderDate>
+            <v:cliente>
+                <c:ID/>
+            </v:cliente>
+            <v:taxas>
+                <t:CurrencyRateID>50</t:CurrencyRateID>
+                <t:CurrencyRateDate>2011-06-03 00:00:00.000</t:CurrencyRateDate>
+                <t:FromCurrencyCode>USD</t:FromCurrencyCode>
+                <t:ToCurrencyCode>MXN</t:ToCurrencyCode>
+                <t:RateVal>9.3369</t:RateVal>
+            </v:taxas>
+            <v:taxas>
+                <t:CurrencyRateID>50</t:CurrencyRateID>
+                <t:CurrencyRateDate>2011-06-03 00:00:00.000</t:CurrencyRateDate>
+                <t:FromCurrencyCode>USD</t:FromCurrencyCode>
+                <t:ToCurrencyCode>MXN</t:ToCurrencyCode>
+                <t:RateVal>9.3369</t:RateVal>
+            </v:taxas>
+            <v:SubTotal>1294.2529</v:SubTotal>
+            <v:TaxAmt>124.2483</v:TaxAmt>
+            <v:stock>
+                <s:ReceiptLineID>14</s:ReceiptLineID>
+                <s:Order/>
+                <s:produto>
+                    <p:ProductID>758</p:ProductID>
+                    <p:ProductName>Road-450 Red. 52</p:ProductName>
+                    <p:ProductNumber>BK-R68R-52</p:ProductNumber>
+                    <p:Color>Red</p:Color>
+                    <p:ListPrice>1457.99</p:ListPrice>
+                    <p:SellStartDate>2011-05-31 00:00:00.000</p:SellStartDate>
+                    <p:SellEndDate>2012-05-29 00:00:00.000</p:SellEndDate>
+                </s:produto>
+                <s:produto>
+                    <p:ProductID>762</p:ProductID>
+                    <p:ProductName>Road-650 Red. 44</p:ProductName>
+                    <p:ProductNumber>BK-R50R-44</p:ProductNumber>
+                    <p:Color>Red</p:Color>
+                    <p:ListPrice>782.99</p:ListPrice>
+                    <p:SellStartDate>2011-05-31 00:00:00.000</p:SellStartDate>
+                    <p:SellEndDate>2013-05-29 00:00:00.000</p:SellEndDate>
+                </s:produto>
+                <s:UnitPrice/>
+            </v:stock>
+            <v:LineTotal>874.794</v:LineTotal>
+        </d:venda>
+    </g:datas>
+</g:gestao>

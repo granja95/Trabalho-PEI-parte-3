@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+            xmlns="http://www.BikeOnTrack.com/Maininfo" 
+            targetNamespace="http://www.BikeOnTrack.com/Queries" 
+            xmlns:ps="http://www.BikeOnTrack.com/ProductSale"
+            xmlns:pas="http://www.BikeOnTrack.com/ProductAllSales"
+            xmlns:gi="http://www.BikeOnTrack.com/GeneralInfo"
+            elementFormDefault="qualified">
+
+    <xs:import schemaLocation="ProductSale.xsd" namespace="http://www.BikeOnTrack.com/ProductSale" />
+    <xs:import schemaLocation="ProductAllSales.xsd" namespace="http://www.BikeOnTrack.com/ProductAllSales" />
+    <xs:import schemaLocation="GeneralInfo.xsd" namespace="http://www.BikeOnTrack.com/GeneralInfo" />
+
+	<xs:complexType name = "Queries">
+		<xs:sequence>
+			<xs:element name = "ProductSale" type="ps:ProductSale"/>
+			<xs:element name = "ProductAllSale" type="pas:ProductAllSale"/>
+			<xs:element name = "GeneralInfo" type="gi:GeneralInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

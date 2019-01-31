@@ -1,0 +1,38 @@
+1 - Topico:
+Número total de produtos: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},ReceiptID:1,Quantity:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{ $group : { _id: \"$ReceiptID\", total: {$sum : \"$Quantity\"}}},{$sort: {_id:1}}])
+
+Número total de produtos diferentes: db.SalesDetails.aggregate([{\"$project\":{year:{$year:'$OrderDate'},Store:1,month:{$month:'$OrderDate'},ReceiptID:1,ReceitpLineID:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group: {_id: {ReceiptID: '$ReceiptID' , Produtos: '$ReceitpLineID'},count: {$sum:1}}},{$sort:{'_id.ReceiptID':1}}]) ****
+
+Valor médio do preço de venda dos produtos: db.SalesDetails.aggregate([{\"$project\":{year:{$year:'$OrderDate'},Store:1,month:{$month:'$OrderDate'},ReceiptID:1,LineTotal:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:'$ReceiptID',avgPrice:{$avg:'$LineTotal'}}}])
+
+
+2- Topico:
+Número total de produtos: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},Quantity:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{ $group : { _id: '$all', total: {$sum : '$Quantity'}}},{$sort: {_id:1}}])
+
+Número total de produtos diferentes: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},ProductID:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$ProductID\"}}, {$count:\"Products\"}])
+
+Número total de clientes diferentes: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},Costumer:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$Customer\"}}, {$count:\"Customer\"}])
+
+Valor vendido por cada cliente. Ordenar o valor vendido por ordem decrescente: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},LineTotal:1,Costumer:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group: { _id: \"$Customer\", total : {$sum :\"$LineTotal\"}}},{$sort: {_id: -1}}])
+
+Por produto, apresentar o total de unidade vendidas. Os resultados devem estar ordenados de forma descendente pelo número de unidades vendidas: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},Quantity:1,ProductID:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group: { _id: \"$ProductID\", total : {$sum : \"$Quantity\" }}},{$sort: {_id:-1}}])
+
+Valor total da venda por cada moeda utilizada (considere a moeda: USD para os valores NULL): db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},CurrencyRateID:1,LineTotal:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group: { _id: \"$CurrencyRateID\" , total: {$sum : \"$LineTotal\"}}},{$sort: {_id: 1}}])
+
+
+3 - Topico :
+Total de produtos vendidos por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,Quantity:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$StoreName\",total:{$sum:\"$Quantity\"}}}])
+Valor total das vendas por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,LineTotal:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{ $group : { _id : \"$StoreName\", total: { $sum: \"$LineTotal\"}}}])
+Valor médio do preço de venda dos produtos por loja: db.SalesDetails.aggregate([{\"$project\":{year:{$year:\"$OrderDate\"},Store:1,month:{$month:\"$OrderDate\"},StoreName:1,UnitPrice:1}},{$match:{$and:[{Store:1046},{year:2011},{month:5}]}},{$group:{_id:\"$StoreName\",avgPrice:{$avg:\"$UnitPrice\"}}},{$sort : {_id:1}} ])
+
+
+
+
+
+
+
+
+
+
+
+

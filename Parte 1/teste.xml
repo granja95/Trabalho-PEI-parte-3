@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<g:gestao empresa="BikeOnTrack" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:g="http://www.BikeOnTrack.com/Gestao"
+    xsi:schemaLocation="http://www.BikeOnTrack.com/Gestao gestao.xsd"
+    xmlns:v="http://www.BikeOnTrack.com/Vendas"
+    xmlns:c="http://www.BikeOnTrack.com/Cliente"
+    xmlns:d="http://www.BikeOnTrack.com/Datas"
+    xmlns:t="http://www.BikeOnTrack.com/Taxas"
+    xmlns:s="http://www.BikeOnTrack.com/Stock"
+    xmlns:p="http://www.BikeOnTrack.com/Produtos" >
+      
+    <g:Nome>BikeOnTrack</g:Nome>
+    <g:NIF>123456789</g:NIF>
+    <g:Morada>Rua 25 de Abril</g:Morada>
+    <g:Contactos>
+        <g:Email>BOTstore@gmail.com</g:Email>
+        <g:Telefone>911222222</g:Telefone>
+    </g:Contactos>
+    <MainInfo>
+        <ProductSale>
+            <ProductTotal></ProductTotal>
+            <DifProductTotal></DifProductTotal>
+            <AvgProductPrice></AvgProductPrice>
+        </ProductSale>
+        <ProductAllSales>
+            <AllProducts></AllProducts>
+            <AllDifProducts></AllDifProducts>
+            <AllDifClients></AllDifClients>
+            <SalesPerClient></SalesPerClient>
+            <TotalProductSales></TotalProductSales>
+            <TotalSalesCurrency></TotalSalesCurrency>
+        </ProductAllSales>
+        <GeneralInfo>
+            <AllProductsSoldPerStore></AllProductsSoldPerStore>
+            <TotalSalesPerStore></TotalSalesPerStore>
+            <AvgProductSalesPerStore></AvgProductSalesPerStore>
+        </GeneralInfo>
+    </MainInfo>
+    <g:datas>
+        <d:dataInicio>2011-05-31T00:00:00</d:dataInicio>
+        <d:dataFim>2012-05-29T00:00:00</d:dataFim>
+        <d:venda>  
+            <v:ReceiptID>43659</v:ReceiptID>
+            <v:OrderDate>2011-05-31</v:OrderDate>
+            <v:cliente>
+                <c:ID>29825</c:ID>
+                <c:Nome>Jose</c:Nome>
+                <c:NIF>123123123</c:NIF>
+                <c:Morada>Rua Nova</c:Morada>
+                <c:Contactos>
+                    <c:Email>Jose@gmail.com</c:Email>
+                    <c:Numero>911222333</c:Numero>
+                </c:Contactos>
+            </v:cliente>
+            <v:taxas>
+                <t:CurrencyRateID>122</t:CurrencyRateID>
+                <t:CurrencyRateDate>2011-05-31T09:00:00</t:CurrencyRateDate>
+                <t:FromCurrencyCode>USD</t:FromCurrencyCode>
+                <t:ToCurrencyCode>AUD</t:ToCurrencyCode>
+                <t:RateVal>1</t:RateVal>
+            </v:taxas>
+            <v:SubTotal>20565</v:SubTotal>
+            <v:TaxAmt>6206</v:TaxAmt>
+            <v:stock>
+                <s:ReceiptLineID>1</s:ReceiptLineID>
+                <s:Order>1</s:Order>
+                <s:produto>
+                    <p:ProductID>776</p:ProductID>
+                    <p:ProductName>Mountain Bike Socks, M</p:ProductName>
+                    <p:ProductNumber>SO-B909-M</p:ProductNumber>
+                    <p:Color>White</p:Color>
+                    <p:ListPrice>9.5</p:ListPrice>
+                    <p:SellStartDate>2011-05-29T00:00:00</p:SellStartDate>
+                    <p:SellEndDate>2012-05-31T00:00:00</p:SellEndDate>
+                </s:produto>
+                <s:UnitPrice>1.213</s:UnitPrice>
+            </v:stock>
+            <v:LineTotal>111</v:LineTotal>
+        </d:venda>        
+        <d:dataGeracao>2012-05-29T00:00:00</d:dataGeracao>
+    </g:datas>
+</g:gestao>
